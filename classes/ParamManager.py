@@ -12,18 +12,21 @@ class ParamManager:
             "file name to save the nicknames in ('no' to reject) :: ")
 
     def get_params(self) -> tuple:
+        # EDGE CASE length is not an integer
         self.length = handle_value_error(
             value_to_check=self.length,
             test_fn=int,
             message=f"The length you gave ('{self.length}') is not an integer."
         )
 
+        # EDGE CASE iter_count is not an integer
         self.iter_count = handle_value_error(
             value_to_check=self.iter_count,
             test_fn=int,
             message=f"The iteration count you gave ('{self.iter_count}') is not an integer."
         )
 
+        # EDGE CASE either iter_count or length is negative or 0
         if self.length <= 0 or self.iter_count <= 0:
             print("YOU CANNOT INPUT 0")
             exit()
