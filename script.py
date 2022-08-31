@@ -1,25 +1,11 @@
 from string import ascii_lowercase as lowercase_letters
 from random import choice
-from utils.handle_value_error import handle_value_error
+from classes.ParamManager import ParamManager
 
 
 def nickname_generator():
     # ====ASK AND SAVE USER-SUPPLIED PARAMETERS====
-    length = input("length :: ")
-    length = handle_value_error(value_to_check=length, test_fn=int,
-                                message=f"The length you gave ('{length}') is not an integer.")
-
-    nickname_start = input("nickname start :: ")
-    nickname_end = input("nickname end :: ")
-
-    iter_count = input(
-        "number of nicknames for the program to output :: ")
-    iter_count = handle_value_error(value_to_check=iter_count, test_fn=int,
-                                    message=f"The iteration count you gave ('{iter_count}') is not an integer.")
-
-    file_name = input(
-        "file name to save the nicknames in ('no' to reject) :: ")
-    file_name = False if file_name.lower() == "no" else file_name
+    length, nickname_start, nickname_end, iter_count, file_name = ParamManager().get_params()
 
     # ====GENERATE NICKNAMES ACCORDING TO GIVEN PARAMETERS====
     i = 0
