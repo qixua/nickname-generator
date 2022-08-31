@@ -1,26 +1,18 @@
 from string import ascii_lowercase as lowercase_letters
 from random import choice
+from utils.handle_value_error import handle_value_error
 
 
 def nickname_generator():
     length = input("length :: ")
-
-    try:
-        length = int(length)
-    except ValueError:
-        print(f"The length you gave ('{length}') is not an integer.")
-        exit()
+    length = handle_value_error(value_to_check=length, test_fn=int,
+                                message=f"The length you gave ('{length}') is not an integer.")
 
     nickname_start = input("nickname start :: ")
     iter_count = input(
         "number of nicknames for the program to output :: ")
-
-    try:
-        iter_count = int(iter_count)
-    except ValueError:
-        print(
-            f"The iteration count you gave ('{iter_count}') is not an integer.")
-        exit()
+    iter_count = handle_value_error(value_to_check=iter_count, test_fn=int,
+                                    message=f"The iteration count you gave ('{iter_count}') is not an integer.")
 
     nickname_end = input("nickname end :: ")
 
