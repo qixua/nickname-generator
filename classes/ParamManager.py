@@ -24,6 +24,10 @@ class ParamManager:
             message=f"The iteration count you gave ('{self.iter_count}') is not an integer."
         )
 
+        if self.length <= 0 or self.iter_count <= 0:
+            print("YOU CANNOT INPUT 0")
+            exit()
+
         self.file_name = False if self.file_name.lower() == "no" else self.file_name
 
         return self.length, self.nickname_start, self.nickname_end, self.iter_count, self.file_name
