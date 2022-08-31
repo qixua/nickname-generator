@@ -28,7 +28,7 @@ def nickname_generator():
         output = ""
         i += 1
 
-        for i in range(length):
+        while not len(output) == length:
             rand_char = choice(list(lowercase_letters))
             output += rand_char
 
