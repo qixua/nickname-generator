@@ -22,7 +22,12 @@ def nickname_generator():
             f"The iteration count you gave ('{iter_count}') is not an integer.")
         exit()
 
+    file_name = input(
+        "file name to save the nicknames in ('no' to reject) :: ")
+    file_name = False if file_name.lower() == "no" else file_name
+
     i = 0
+    nicknames = []
 
     while i < iter_count:
         output = ""
@@ -35,13 +40,20 @@ def nickname_generator():
         if nickname_start:
             output = nickname_start + output[len(nickname_start):]
 
-        print(
-            f"""
-            nickname {i}
-            {"-" * length}
-            {output}
-            {"-" * length}"""
-        )
+        nicknames.append(output)
+
+        if not file_name:
+            print(
+                f"{i}::{output}"
+            )
+
+    if file_name:
+        with open(file_name, "w") as file:
+            for i, n in enumerate(nicknames):
+                file.write(f"{i + 1}::{n}\n")
+
+            print(
+                f"successfully wrote {'a' if len(nicknames) == 1 else len(nicknames)} nickname{'s' if len(nicknames) > 1 else ''} to '{file_name}'")
 
 
 if __name__ == "__main__":
