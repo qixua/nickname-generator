@@ -5,7 +5,7 @@ class ParamManager:
     def __init__(self):
         self.length = input("length :: ")
         self.nickname_start = input("nickname start :: ")
-        self.nickname_end = input("nickname end")
+        self.nickname_end = input("nickname end :: ")
         self.iter_count = input(
             "number of nicknames for the program to output :: ")
         self.file_name = input(
