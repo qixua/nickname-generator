@@ -21,9 +21,14 @@ def nickname_generator():
             output = nickname_start + output[len(nickname_start):]
 
         if nickname_end:
+            # created a variable instead of writing it
+            # directly because of readability concerns
             diff_end = len(output) - len(nickname_end)
             output = output[0:diff_end] + nickname_end
 
+        # keeping track of the nicknames because
+        # it will be handy when printing the
+        # result into a new file
         nicknames.append(output)
 
         if not file_name:
@@ -36,8 +41,12 @@ def nickname_generator():
             for i, n in enumerate(nicknames):
                 file.write(f"{i + 1}::{n}\n")
 
+            # there are 2 inline if's to improve readability of the messages
+            # n = 1, successfully wrote a nickname to file_name
+            # n > 1, successfully wrote n nicknames to file_name
             print(
-                f"successfully wrote {'a' if len(nicknames) == 1 else len(nicknames)} nickname{'s' if len(nicknames) > 1 else ''} to '{file_name}'")
+                f"successfully wrote {'a' if len(nicknames) == 1 else len(nicknames)} nickname{'s' if len(nicknames) > 1 else ''} to '{file_name}'"
+            )
 
 
 if __name__ == "__main__":
