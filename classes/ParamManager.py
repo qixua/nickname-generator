@@ -11,7 +11,7 @@ class ParamManager:
         self.file_name = input(
             "file name to save the nicknames in ('no' to reject) :: ")
 
-    def get_params(self):
+    def get_params(self) -> tuple:
         self.length = handle_value_error(
             value_to_check=self.length,
             test_fn=int,
