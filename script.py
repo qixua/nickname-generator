@@ -1,4 +1,4 @@
-from string import ascii_lowercase
+from string import ascii_lowercase as lowercase_letters
 from random import choice
 
 
@@ -12,7 +12,6 @@ def nickname_generator():
         exit()
 
     nickname_start = input("nickname start :: ")
-    iteration = 0
     iteration_count = input(
         "number of nicknames for the program to output :: ")
 
@@ -23,12 +22,14 @@ def nickname_generator():
             f"The iteration count you gave ('{iteration_count}') is not an integer.")
         exit()
 
-    while iteration < iteration_count:
+    i = 0
+
+    while i < iteration_count:
         output = ""
-        iteration += 1
+        i += 1
 
         for i in range(length):
-            rand_char = choice(list(ascii_lowercase))
+            rand_char = choice(list(lowercase_letters))
             output += rand_char
 
         if nickname_start:
@@ -36,7 +37,7 @@ def nickname_generator():
 
         print(
             f"""
-            nickname {iteration}
+            nickname {i}
             {"-" * length}
             {output}
             {"-" * length}"""
