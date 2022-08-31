@@ -3,7 +3,14 @@ from random import choice
 
 
 def nickname_generator():
-    length = int(input("length :: "))
+    length = input("length :: ")
+
+    try:
+        length = int(length)
+    except ValueError:
+        print(f"The length you gave ('{length}') is not an integer.")
+        exit()
+
     nickname_start = input("nickname start :: ")
     iteration = 0
 
