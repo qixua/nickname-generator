@@ -16,10 +16,7 @@ def nickname_generator():
             output += rand_char
 
         if nickname_start:
-            output = nickname_start + output[1:]
-
-            while not len(output) == length:
-                output = output[: len(output) - 1]
+            output = nickname_start + output[len(nickname_start):]
 
         print(
             f"""
