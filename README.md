@@ -107,7 +107,7 @@ Copy what you like, or rerun the program to try different stuff.
 - [x] Parameter that lets you save the nicknames in an output file.
 - [x] Parameter that lets you tweak the amount of nicknames outputted
 - [ ] Ability to copy the nickname in a given index
-- [ ] Parameter that lets you tweak the ending letter(s)
+- [x] Parameter that lets you tweak the ending letter(s)
 
 ## License
 The repository qixua/nickname-generator and all of its source code is licensed by the license: [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)

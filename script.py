@@ -22,6 +22,8 @@ def nickname_generator():
             f"The iteration count you gave ('{iter_count}') is not an integer.")
         exit()
 
+    nickname_end = input("nickname end :: ")
+
     file_name = input(
         "file name to save the nicknames in ('no' to reject) :: ")
     file_name = False if file_name.lower() == "no" else file_name
@@ -39,6 +41,10 @@ def nickname_generator():
 
         if nickname_start:
             output = nickname_start + output[len(nickname_start):]
+
+        if nickname_end:
+            diff_end = len(output) - len(nickname_end)
+            output = output[0:diff_end] + nickname_end
 
         nicknames.append(output)
 
