@@ -4,10 +4,8 @@ from classes.ParamManager import ParamManager
 
 
 def nickname_generator():
-    # ====ASK AND SAVE USER-SUPPLIED PARAMETERS====
     length, nickname_start, nickname_end, iter_count, file_name = ParamManager().get_params()
 
-    # ====GENERATE NICKNAMES ACCORDING TO GIVEN PARAMETERS====
     i = 0
     nicknames = []
 
