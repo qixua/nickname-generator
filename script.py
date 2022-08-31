@@ -12,19 +12,19 @@ def nickname_generator():
         exit()
 
     nickname_start = input("nickname start :: ")
-    iteration_count = input(
+    iter_count = input(
         "number of nicknames for the program to output :: ")
 
     try:
-        iteration_count = int(iteration_count)
+        iter_count = int(iter_count)
     except ValueError:
         print(
-            f"The iteration count you gave ('{iteration_count}') is not an integer.")
+            f"The iteration count you gave ('{iter_count}') is not an integer.")
         exit()
 
     i = 0
 
-    while i < iteration_count:
+    while i < iter_count:
         output = ""
         i += 1
 
