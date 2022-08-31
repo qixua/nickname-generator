@@ -15,14 +15,14 @@ class ParamManager:
         # EDGE CASE length is not an integer
         self.length = handle_value_error(
             value_to_check=self.length,
-            test_fn=int,
+            type_conv_fn=int,
             message=f"The length you gave ('{self.length}') is not an integer."
         )
 
         # EDGE CASE iter_count is not an integer
         self.iter_count = handle_value_error(
             value_to_check=self.iter_count,
-            test_fn=int,
+            type_conv_fn=int,
             message=f"The iteration count you gave ('{self.iter_count}') is not an integer."
         )
 
